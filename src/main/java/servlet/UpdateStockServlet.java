@@ -7,6 +7,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  * Servlet implementation class UpdateStockServlet
@@ -34,6 +35,13 @@ public class UpdateStockServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		HttpSession session = request.getSession();
+		String user_id = (String) session.getAttribute("user_id");
+		int stock_id = Integer.parseInt(request.getParameter("stock_id"));
+		String item_name = request.getParameter("item_name");
+		int category_id = Integer.parseInt(request.getParameter("category_id"));
+		int item_count = Integer.parseInt(request.getParameter("item_count"));
+		int alert_count = Integer.parseInt(request.getParameter("alert_count"));
 		
 	}
 
